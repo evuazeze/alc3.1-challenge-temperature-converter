@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+		<!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="stylesheet" href="styles.css">
+
+    <title>Temperature Converter</title>
+  </head>
+  <body>
+		<div class="temp container d-flex h-100 align-items-center justify-content-center">
+			<div class="row ">
+				<div class="col">
+					<div class="card bg-info text-white">
+							<div class="card-header"> Temperature Converter </div>
+									<form class="p-5">
+											<div class="form-group row">
+													<label for="celcius" class="col-md-4 col-form-label">Celcius</label>
+													<div class="col-md-8">
+														<input type="number" class="form-control" id="celcius"></input>
+													</div>
+											</div>
+											<div class="form-group row">
+													<label for="kelvin" class="col-md-4 col-form-label">Kelvin</label>
+													<div class="col-md-8">
+													<input type="number" class="form-control" id="kelvin"></input>
+													</div>
+											</div>
+										</form>
+
+							
+					</div>
+
+		</div>
+		</div>
+			</div>
+			<script>
+				 var celciusInput = document.getElementById('celcius');
+				 var kelvinInput = document.getElementById('kelvin');
+
+				 celciusInput.addEventListener('input', function(evt) {
+					 let kelTemp = Number(celciusInput.value) + 273.15;
+					 kelvinInput.value = (kelTemp).toFixed(2);
+				 })
+
+				 kelvinInput.addEventListener('input', function(evt) {
+					 let celTemp = Number(kelvinInput.value) - 273.15;
+					 celciusInput.value = celTemp.toFixed(2);
+				 })
+			</script>
+
+  </body>
+</html>
